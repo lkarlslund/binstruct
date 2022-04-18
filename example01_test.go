@@ -6,7 +6,7 @@ import (
 	"fmt"
 
 	"github.com/davecgh/go-spew/spew"
-	"github.com/ghostiam/binstruct"
+	"github.com/lkarlslund/binstruct"
 )
 
 type dataWithNullTerminatedString struct {

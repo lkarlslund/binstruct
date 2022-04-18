@@ -11,7 +11,7 @@ import (
 
 	"github.com/davecgh/go-spew/spew"
 
-	"github.com/ghostiam/binstruct"
+	"github.com/lkarlslund/binstruct"
 )
 
 // .ZIP File Format Specification: https://pkware.cachefly.net/webdocs/casestudies/APPNOTE.TXT

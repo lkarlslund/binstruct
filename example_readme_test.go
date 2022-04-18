@@ -6,7 +6,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/ghostiam/binstruct"
+	"github.com/lkarlslund/binstruct"
 )
 
 func Example_readmeFromIOReadSeeker() {

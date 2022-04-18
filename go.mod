@@ -1,4 +1,4 @@
-module github.com/ghostiam/binstruct
+module github.com/lkarlslund/binstruct
 
 go 1.13
 

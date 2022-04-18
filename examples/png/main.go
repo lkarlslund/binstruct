@@ -10,7 +10,7 @@ import (
 
 	"github.com/davecgh/go-spew/spew"
 
-	"github.com/ghostiam/binstruct"
+	"github.com/lkarlslund/binstruct"
 )
 
 // Portable Network Graphics (PNG) Specification: https://www.w3.org/TR/PNG/

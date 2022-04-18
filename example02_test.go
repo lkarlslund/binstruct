@@ -7,7 +7,7 @@ import (
 	"log"
 
 	"github.com/davecgh/go-spew/spew"
-	"github.com/ghostiam/binstruct"
+	"github.com/lkarlslund/binstruct"
 )
 
 type custom struct {
