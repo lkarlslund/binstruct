@@ -35,7 +35,15 @@ type tag struct {
 	ElemTags []tag
 }
 
+var (
+	ptcache = make(map[string][]tag)
+)
+
 func parseTag(t string) ([]tag, error) {
+	if ptc, ok := ptcache[t]; ok {
+		return ptc, nil
+	}
+
 	var tags []tag
 
 	for {
@@ -119,6 +127,7 @@ func parseTag(t string) ([]tag, error) {
 		}
 
 		if index == -1 {
+			ptcache[t] = tags
 			return tags, nil
 		}
 	}
