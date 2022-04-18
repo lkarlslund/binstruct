@@ -7,6 +7,10 @@ import (
 	"strings"
 )
 
+type BinaryDecoder interface {
+	BinaryDecode(r Reader) error
+}
+
 type unmarshal struct {
 	r Reader
 }
@@ -121,6 +125,14 @@ or
 		}
 
 		return nil
+	}
+
+	if fv, ok := fieldValue.Addr().Interface().(BinaryDecoder); ok {
+		return fv.BinaryDecode(r)
+	}
+
+	if fv, ok := fieldValue.Interface().(BinaryDecoder); ok {
+		return fv.BinaryDecode(r)
 	}
 
 	switch fieldValue.Kind() {
