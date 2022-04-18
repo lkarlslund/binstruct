@@ -241,6 +241,19 @@ or
 			return errors.New("need set tag with len for slice")
 		}
 
+		if fieldValue.Type().Elem().Kind() == reflect.Uint8 {
+			// Byte slice
+			n, b, err := r.ReadBytes(int(*fieldData.Length))
+			if err != nil {
+				return err
+			}
+			if n != int(*fieldData.Length) {
+				return fmt.Errorf("read %d bytes, expected %d", n, int(*fieldData.Length))
+			}
+			fieldValue.SetBytes(b)
+			return nil
+		}
+
 		for i := int64(0); i < *fieldData.Length; i++ {
 			tmpV := reflect.New(fieldValue.Type().Elem()).Elem()
 			err = u.setValueToField(structValue, tmpV, fieldData.ElemFieldData, parentStructValues)
