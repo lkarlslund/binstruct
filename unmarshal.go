@@ -37,6 +37,10 @@ func (u *unmarshal) Unmarshal(v interface{}) error {
 }
 
 func (u *unmarshal) unmarshal(v interface{}, parentStructValues []reflect.Value) error {
+	if fv, ok := v.(BinaryDecoder); ok {
+		return fv.BinaryDecode(u.r)
+	}
+
 	rv := reflect.ValueOf(v)
 	if rv.Kind() != reflect.Ptr || rv.IsNil() {
 		return &InvalidUnmarshalError{reflect.TypeOf(v)}
