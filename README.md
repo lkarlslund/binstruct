@@ -1,10 +1,10 @@
-[![Go Report Card](https://goreportcard.com/badge/github.com/ghostiam/binstruct)](https://goreportcard.com/report/github.com/ghostiam/binstruct) [![CodeCov](https://codecov.io/gh/ghostiam/binstruct/branch/master/graph/badge.svg)](https://codecov.io/gh/ghostiam/binstruct) [![GoDoc](https://godoc.org/github.com/ghostiam/binstruct?status.svg)](https://godoc.org/github.com/ghostiam/binstruct) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/ghostiam/binstruct/blob/master/LICENSE)
+[![Go Report Card](https://goreportcard.com/badge/github.com/lkarlslund/binstruct)](https://goreportcard.com/report/github.com/lkarlslund/binstruct) [![CodeCov](https://codecov.io/gh/lkarlslund/binstruct/branch/master/graph/badge.svg)](https://codecov.io/gh/lkarlslund/binstruct) [![GoDoc](https://godoc.org/github.com/lkarlslund/binstruct?status.svg)](https://godoc.org/github.com/lkarlslund/binstruct) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/lkarlslund/binstruct/blob/master/LICENSE)
 
 # binstruct
 Golang binary decoder to structure
 
 # Install
-```go get -u github.com/ghostiam/binstruct```
+```go get -u github.com/lkarlslund/binstruct```
 
 # Examples
 
@@ -25,7 +25,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/ghostiam/binstruct"
+	"github.com/lkarlslund/binstruct"
 )
 
 func main() {
@@ -62,7 +62,7 @@ import (
 	"fmt"
 	"log"
 	
-	"github.com/ghostiam/binstruct"
+	"github.com/lkarlslund/binstruct"
 )
 
 func main() {
@@ -157,7 +157,7 @@ import (
 	"fmt"
 	"log"
 	
-	"github.com/ghostiam/binstruct"
+	"github.com/lkarlslund/binstruct"
 )
 
 func main() {
