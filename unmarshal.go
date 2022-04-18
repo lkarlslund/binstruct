@@ -64,9 +64,11 @@ func (u *unmarshal) unmarshal(v interface{}, parentStructValues []reflect.Value)
 	return nil
 }
 
+var blankFieldReadData fieldReadData
+
 func (u *unmarshal) setValueToField(structValue, fieldValue reflect.Value, fieldData *fieldReadData, parentStructValues []reflect.Value) error {
 	if fieldData == nil {
-		fieldData = &fieldReadData{}
+		fieldData = &blankFieldReadData
 	}
 
 	if fieldData.Ignore {
