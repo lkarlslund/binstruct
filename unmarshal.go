@@ -266,15 +266,15 @@ or
 			return nil
 		}
 
+		fieldValue.Set(reflect.MakeSlice(fieldValue.Type(), int(*fieldData.Length), int(*fieldData.Length)))
+
 		for i := int64(0); i < *fieldData.Length; i++ {
 			tmpV := reflect.New(fieldValue.Type().Elem()).Elem()
 			err = u.setValueToField(structValue, tmpV, fieldData.ElemFieldData, parentStructValues)
 			if err != nil {
 				return err
 			}
-			if fieldValue.CanSet() {
-				fieldValue.Set(reflect.Append(fieldValue, tmpV))
-			}
+			fieldValue.Index(int(i)).Set(tmpV)
 		}
 	case reflect.Array:
 		var arrLen int64
@@ -293,9 +293,7 @@ or
 			if err != nil {
 				return err
 			}
-			if fieldValue.CanSet() {
-				fieldValue.Index(int(i)).Set(tmpV)
-			}
+			fieldValue.Index(int(i)).Set(tmpV)
 		}
 	case reflect.Struct:
 		err = u.unmarshal(fieldValue.Addr().Interface(), append(parentStructValues, structValue))
